@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fde4e4; /* Розовый фон */
+    color: #303030;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d1b1c; /* Розовый цвет шапки */
+    padding: 40px 60px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: #ff99a2; /* Розовый цвет шапки при прокрутке */
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 600;
+    animation: slideIn 1.5s ease-out forwards;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff6f61;
+}
+
+.hero {
+    background: url('https://make4make.ru/image/cache/catalog/000/catrice/korea/2_701c6772-4274-4fe5-8457-cc3a25e34f28_2400x-1000x1340.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 182, 193, 0.5); /* Полупрозрачный розовый слой */
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    animation: fadeInText 2s ease forwards;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    animation: fadeInText 2.5s ease forwards;
+}
+
+.btn {
+    background-color: #000000;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    animation: scaleUp 1.5s ease forwards;
+}
+
+.btn:hover {
+    background-color: #ff8080;
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(255, 109, 96, 0.6);
+}
+
+.portfolio {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #fff0f5; /* Персиковый фон */
+    animation: fadeInUp 1.5s forwards;
+}
+
+.portfolio h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.filter {
+    margin-bottom: 30px;
+}
+
+#category-filter,
+#search-input {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    margin: 0 10px;
+    transition: border-color 0.3s;
+    background-color: #fff;
+    color: #333;
+}
+
+#category-filter:focus,
+#search-input:focus {
+    border-color: #ff6f61;
+    outline: none;
+}
+
+.works {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.work {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+    animation: fadeInProduct 1.5s ease forwards;
+}
+
+.work:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.about {
+    padding: 80px 20px;
+    background-color: #ffe4e1; /* Персиковый фон */
+    text-align: center;
+    animation: fadeInUp 1.5s forwards;
+}
+
+.about h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.about p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.location {
+    padding: 80px 20px;
+    background-color: #fff0f5; /* Персиковый фон */
+    text-align: center;
+    animation: fadeInUp 1.5s forwards;
+}
+
+.location h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.location p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.map iframe {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.certificates {
+    padding: 80px 20px;
+    background-color: #ffe4e1; /* Персиковый фон */
+    text-align: center;
+    animation: fadeInUp 1.5s forwards;
+}
+
+.certificates h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.certificate-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Сертификаты */
+.certificates {
+    padding: 80px 20px;
+    background-color: #ffe4e1; /* Персиковый фон */
+    text-align: center;
+    animation: fadeInUp 1.5s forwards;
+}
+
+.certificates h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.certificate-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.certificate-gallery img {
+    max-width: 300px; /* Уменьшаем максимальную ширину изображения */
+    height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
+    border: 5px solid #e0e0e0; /* Цвет и толщина рамки */
+    border-radius: 10px; /* Закругленные углы рамки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для эффекта "всплывания" */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход при наведении */
+}
+
+.certificate-gallery img:hover {
+    transform: scale(1.05); /* Увеличение изображения при наведении */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличение тени при наведении */
+}
+
+.certificates img {
+    width: 50%; /* Сокращение размера до 50% от оригинала */
+    height: auto; /* Чтобы сохранить пропорции изображения */
+    display: block; /* Чтобы убрать лишние отступы */
+    margin: 0 auto; /* Центрирование изображения */
+}
+
+/* Стили для футера */
+footer {
+    background-color: #000000; /* Светло-серый фон */
+    color: #ffffff; /* Темный цвет текста */
+    padding: 20px 0; /* Внутренние отступы */
+    text-align: center; /* Выравнивание текста по центру */
+    font-size: 14px; /* Размер шрифта */
+    border-top: 1px solid #ddd; /* Верхняя граница для отделения от основного контента */
+}
+
+footer p {
+    margin: 0; /* Убираем отступы у абзацев */
+}
+
+footer a {
+    color: #007bff; /* Синий цвет для ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Стили для списка социальных ссылок */
+footer .social-links {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+    margin: 10px 0 0; /* Отступ сверху */
+    display: flex; /* Используем flexbox для выравнивания */
+    justify-content: center; /* Выравниваем элементы по центру */
+    gap: 15px; /* Расстояние между элементами */
+}
+
+footer .social-links li {
+    display: inline-block; /* Выстраиваем элементы в строку */
+}
+
+footer .social-links a {
+    color: #ffffff; /* Цвет текста ссылок */
+    font-size: 16px; /* Размер шрифта */
+}
+
+footer .social-links a:hover {
+    color: #007bff; /* Цвет при наведении */
+}
